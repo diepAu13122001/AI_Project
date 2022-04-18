@@ -1,7 +1,0 @@
-{
-  "name": "AI_Project_NodeJS",
-  "version": "1.0.0",
-  "devDependencies": {
-    "axios": "^0.26.1"
-  }
-}
