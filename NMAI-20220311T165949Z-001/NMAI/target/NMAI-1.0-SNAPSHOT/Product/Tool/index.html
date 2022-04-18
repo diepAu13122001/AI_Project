@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link
+    rel="shortcut icon"
+    href="assets/images/favicon.svg"
+    type="image/x-icon"
+  />
+  <title>Tool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="../indexx.css">
+</head>
+<body>
+<!-- ======== sidebar-nav start =========== -->
+<aside class="sidebar-nav-wrapper text-center">
+  <div class="navbar-logo me-2">
+    <h5 class="fs-4"><img src="../../../img/iconnail.jpg" style="width: 60px; height: 60px" alt="Nnail">Nnail</h5>
+  </div>
+  <nav class="sidebar-nav">
+    <ul>
+      <li class="nav-item nav-home">
+        <a
+          href="#0"
+        >
+          <i class="material-icons">home</i>
+          <span class="text ms-3"> Trang chủ</span>
+        </a>
+      </li>
+      <span class="divider"><hr/></span>
+      <li class="nav-item nav-item-has-children">
+        <a
+          href="#0"
+          data-bs-toggle="collapse"
+          data-bs-target="#ddmenu_1"
+          aria-controls="ddmenu_1"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+              <span class="icon">
+                <svg width="22" height="22" viewBox="0 0 22 22">
+                  <path
+                    d="M17.4167 4.58333V6.41667H13.75V4.58333H17.4167ZM8.25 4.58333V10.0833H4.58333V4.58333H8.25ZM17.4167 11.9167V17.4167H13.75V11.9167H17.4167ZM8.25 15.5833V17.4167H4.58333V15.5833H8.25ZM19.25 2.75H11.9167V8.25H19.25V2.75ZM10.0833 2.75H2.75V11.9167H10.0833V2.75ZM19.25 10.0833H11.9167V19.25H19.25V10.0833ZM10.0833 13.75H2.75V19.25H10.0833V13.75Z"
+                  />
+                </svg>
+              </span>
+          <span class="text">Sản phẩm</span>
+        </a>
+        <ul id="ddmenu_1" class="collapse show dropdown-nav">
+          <li>
+            <a href="../../../index.html" class="px-3"> Móng giả </a>
+          </li>
+          <li>
+            <a href="../../../index.html" class="px-3"> Nước sơn </a>
+          </li>
+          <li>
+            <a href="../../../index.html" class="px-3"> Phụ kiện </a>
+          </li>
+          <li>
+            <a href="../../../index.html" class="px-3  active" > Dụng cụ </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item nav-item-has-children">
+        <a
+          href="#0"
+          class="collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#ddmenu_2"
+          aria-controls="ddmenu_2"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="material-icons">business_center</i>
+          <span class="text mx-3">Khách hàng</span>
+        </a>
+        <ul id="ddmenu_2" class="collapse dropdown-nav">
+          <li>
+            <a href="settings.html" class="px-3"> Khách hàng kim cương </a>
+          </li>
+          <li>
+            <a href="blank-page.html" class="px-3">Khách hàng vàng </a>
+          </li>
+          <li>
+            <a href="blank-page.html" class="px-3">Khách hàng bạc </a>
+          </li>
+          <li>
+            <a href="blank-page.html" class="px-3">Khách hàng thông thường </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a
+          href="#0"
+        >
+          <i class="material-icons">card_giftcard</i>
+          <span class="text mx-3">Khuyến mãi</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          href="#0"
+        >
+          <i class="material-icons">assignment</i>
+          <span class="text mx-3">Đơn hàng</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          href="#0"
+        >
+          <i class="material-icons">assignment</i>
+          <span class="text mx-3">Tài khoản</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+<div class="overlay"></div>
+
+<main class="main-wrapper">
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-6">
+          <div class="header-left d-flex align-items-center">
+            <div class="menu-toggle-btn mr-20">
+              <button
+                id="menu-toggle"
+                class="main-btn primary-btn btn-hover"
+              >
+                <i class="material-icons">subject</i>
+                Menu
+              </button>
+            </div>
+            <div class="header-search d-none d-md-flex">
+              <form action="#">
+                <input type="text" placeholder="Search..."/>
+                <button><i class="lni lni-search-alt"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-6">
+          <div class="header-right">
+            <!-- profile start -->
+            <div class="profile-box ml-15">
+              <button
+                class="dropdown-toggle bg-transparent border-0"
+                type="button"
+                id="profile"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="profile-info">
+                  <div class="info">
+                    <h6>Daisy Thi</h6>
+                    <div class="image">
+                      <img
+                        src="../../../img/image0.jpg"
+                        alt=""
+                      />
+                      <span class="status"></span>
+                    </div>
+                  </div>
+                </div>
+                <i class="lni lni-chevron-down"></i>
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="profile"
+              >
+                <li>
+                  <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
+                </li>
+                <li>
+                  <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="table-product w-100 px-3">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Mã sản phẩm</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Thương hiệu</th>
+        <th scope="col">Giá bán</th>
+        <th scope="col">Hình ảnh</th>
+        <th scope="col">Chi tiết</th>
+      </tr>
+      </thead>
+      <tbody id="tabel-product">
+      </tbody>
+    </table>
+    <nav aria-label="Page navigation example w-100">
+      <ul class="pagination w-25 mx-auto">
+        <li class="page-item"><a class="page-link text-dark" href="#"><i class="bi bi-arrow-left"></i></a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#"><i class="bi bi-arrow-right"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 order-last order-md-first">
+          <div class="copyright text-center text-md-start">
+            <p class="text-sm">
+              Designed and Developed by
+              <a
+                href="https://plainadmin.com"
+                rel="nofollow"
+                target="_blank"
+              >
+                PlainAdmin
+              </a>
+            </p>
+          </div>
+        </div>
+        <!-- end col-->
+        <div class="col-md-6">
+          <div
+            class="
+                  terms
+                  d-flex
+                  justify-content-center justify-content-md-end
+                "
+          >
+            <a href="#0" class="text-sm">Term & Conditions</a>
+            <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
+          </div>
+        </div>
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </footer>
+  <!-- ========== footer end =========== -->
+</main>
+<script lang="js" type="text/javascript"  src="index.js"></script>
+<script lang="js" type="text/javascript"  src="../main.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

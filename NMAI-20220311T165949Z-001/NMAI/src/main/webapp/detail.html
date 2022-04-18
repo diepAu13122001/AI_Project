@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+    /**
+     * Sample JavaScript code for youtube.videos.list
+     * See instructions for running APIs Explorer code samples locally:
+     * https://developers.google.com/explorer-help/code-samples#javascript
+     */
+
+    // function authenticate() {
+    //   return gapi.auth2.getAuthInstance()
+    //           .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
+    //           .then(function() { console.log("Sign-in successful"); },
+    //                   function(err) { console.error("Error signing in", err); });
+    // }
+    function loadClient() {
+        gapi.client.setApiKey("AIzaSyDR7ik9IZsLSkp9kOPOVinz9aa2y7ctD48");
+        return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+            .then(function () {
+                    console.log("GAPI client loaded for API");
+                },
+                function (err) {
+                    console.error("Error loading GAPI client for API", err);
+                });
+    }
+
+    setTimeout(function (){
+        window.location = "workout.html"
+    }, calTimeToLoadPage("PT0M5S"));
+
+
+    // Make sure the client is loaded and sign-in is complete before calling this method.
+    function execute() {
+        return gapi.client.youtube.videos.list({
+            "part": [
+                "contentDetails"
+            ],
+            "id": [
+                "6AJjLR2ApXU"
+            ]
+        })
+            .then(function (response) {
+                    // Handle the results here (response.result has the parsed body).
+                    let durationTime = response.result.items[0].contentDetails.duration;
+                    document.querySelector('body').innerHTML += '<h1>' + calDurationTimeOfVideo(durationTime).hour + ' hour</h1>';
+                    document.querySelector('body').innerHTML += '<h1>' + calDurationTimeOfVideo(durationTime).minute + ' minute</h1>';
+                    document.querySelector('body').innerHTML += '<h1>' + calDurationTimeOfVideo(durationTime).second + ' second</h1>';
+                    document.querySelector('body').innerHTML += '<h1>' + calTimeToLoadPage(durationTime) + '</h1>';
+                },
+                function (err) {
+                    console.error("Execute error", err);
+                });
+    }
+
+    gapi.load("client", loadClient);
+
+    // gapi.load("client:auth2", function() {
+    //   gapi.auth2.init({client_id: "AIzaSyDR7ik9IZsLSkp9kOPOVinz9aa2y7ctD48"});
+    // });
+
+    // for video has duration < 24h
+    function calDurationTimeOfVideo(durationTimeCode) {
+        let tmp = durationTimeCode.trim().replace("PT", " ").replace("H", " ").replace("M", " ").replace("S", " ").split(" ");
+        let result = {};
+        if (tmp.length === 5) {
+            result = {hour: tmp[1], minute: tmp[2], second: tmp[3]}
+        } else if (tmp.length === 4) {
+            result = {hour: 0, minute: tmp[1], second: tmp[2]}
+        }
+        return result;
+    }
+
+    function calTimeToLoadPage(durationTimeCode) {
+        let result =
+            (calDurationTimeOfVideo(durationTimeCode).hour * 3600 + calDurationTimeOfVideo(durationTimeCode).minute * 60 + calDurationTimeOfVideo(durationTimeCode).second) * 1000;
+        return result;
+    }
+</script>
+
+
+<button onclick="execute()">execute</button>
+
+</body>
+</html>

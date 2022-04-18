@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{6743dd3fb9, Chart.js, Node.js Core, a076d05399, api, bootstrap, bootstrap-icons, e0796720d0, fancybox, font-awesome, jquery, jquery-1.12.4, jquery-ui}" />
+  </component>
+</project>
