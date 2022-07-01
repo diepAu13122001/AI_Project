@@ -882,7 +882,7 @@ svg {
     font-weight: 600;
 }
 
-.dream-weight-data {
+.dream-weight-data, .dream-weight-data-edit {
     display: flex;
     justify-content: right;
     text-align: center;
@@ -893,17 +893,19 @@ svg {
     margin-right: 15px;
 }
 
-.dream-weight-data {
+.dream-weight-data, .dream-weight-data-edit {
     color: #d06060;
     margin-left: 10px;
 }
 
-.dream-weight-data p {
+.dream-weight-data p,
+.dream-weight-data-edit p {
     font-weight: 800;
     font-size: 20px;
 }
 
-.dream-weight-data button {
+.dream-weight-data button,
+.dream-weight-data-edit button {
     margin-left: 15px;
 }
 
@@ -1035,3 +1037,11 @@ svg {
     }
 }
 
+.dream-weight-data-edit input {
+    border: none;
+    border-bottom: 1px solid lightcoral;
+    width: 40px;
+    text-align: right;
+    color: #d06060;
+    font-weight: 700;
+}

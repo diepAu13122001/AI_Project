@@ -92,7 +92,6 @@
 
         return gapi.client.youtube.search.list(arr_search)
             .then(function (response) {
-                    // Handle the results here (response.result has the parsed body).
                     const listItems = response.result.items;
                     if (listItems) {
                         let output = '<h4>Videos</h4><ul>';
@@ -103,18 +102,17 @@
                             const videoTitle = item.snippet.title;
                             // const durationTime = item.contentDetails.duration;
 
-
-                            // <a data-fancybox href="https://www.youtube.com/watch?v=${videoId}">
-                            //     <img src="http://i3.ytimg.com/vi/${videoId}/hqdefault.jpg" />
-                            // </a>
-                            // <p>${videoTitle}</p>
                             output += `<li>
                                 <div className="video">
-                                    <iframe width="560" height="315"
-                                            src="https://www.youtube.com/embed/${videoId}?controls=0"
-                                            title="YouTube video player" frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen></iframe>
+                                    // <iframe width="560" height="315"
+                                    //         src="https://www.youtube.com/embed/${videoId}?controls=0"
+                                    //         title="YouTube video player" frameBorder="0"
+                                    //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    //         allowFullScreen></iframe>
+                                     <a data-fancybox href="https://www.youtube.com/watch?v=${videoId}">
+                                <img style="width: 500px; height: 300px;" src="http://i3.ytimg.com/vi/${videoId}/hqdefault.jpg" />
+                            </a>
+                            <p>${videoTitle}</p>
                                 </div>
                             </li>`;
                         });

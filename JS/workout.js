@@ -225,3 +225,25 @@ function saveTimeForWorkout() {
     document.querySelector('#save-time-for-workout').classList.add('hide');
     document.querySelector('#edit-time-for-workout').classList.remove('hide');
 }
+
+function editPTagOfDreamWeightData() {
+    let content = document.querySelector('.dream-weight-data p');
+    let subContent = content.lastChild;
+    let newWeight = document.querySelector('.dream-weight-data-edit input').value;
+    document.querySelector('.dream-weight-data p').innerHTML = newWeight + "kg";
+    document.querySelector('.dream-weight-data p').append(subContent);
+}
+
+function saveDreamWeightData() {
+    editPTagOfDreamWeightData();
+    document.querySelector('.dream-weight-data').classList.remove('hide');
+    document.querySelector('.dream-weight-data-edit').classList.add('hide');
+}
+
+function editDreamWeightData() {
+    let content = document.querySelector('.dream-weight-data p').textContent;
+    document.querySelector('.dream-weight-data-edit input').value = content.split('kg')[0];
+
+    document.querySelector('.dream-weight-data').classList.add('hide');
+    document.querySelector('.dream-weight-data-edit').classList.remove('hide');
+}

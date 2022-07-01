@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="CSS/list-workout.css">
+    <title>Workout list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/list-workout.css">
+    <link rel="stylesheet" href="../HTML/workout.html">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="../JS/workout-api.js"></script>
 </head>
 <body>
 <div class="header">
@@ -20,94 +24,11 @@
             </div>
         </div>
     </div>
-    <img src="img/pngaaa.com-629517.png" alt="">
+    <img src="../img/pngaaa.com-629517.png" alt="">
 </div>
-<div class="list-workout">
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-    <div class="workout-card">
-        <div class="workout-content">
-            <div class="workout-name">HIGH STEPPING</div>
-            <!-- default 1 repeat time = 2 seconds-->
-            <div class="num-of-repeat">x 15</div>
-        </div>
-        <div class="workout-gif"><img
-                src="https://ghiencongnghe.info/wp-content/uploads/2021/02/1581591620013_WhoppingBlackLemur-size_restricted.gif"
-                alt=""></div>
-    </div>
-</div>
+<div class="list-workout" id="list-workout"></div>
 <div class="start">
     <button>start</button>
 </div>
-
-<script src="JS/workout-detail.js"></script>
 </body>
 </html>

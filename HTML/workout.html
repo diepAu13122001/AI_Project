@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="../CSS/indexx.css">
-    <script src="../JS/main.js"></script>
-    <script src="../JS/index.js"></script>
     <script src="https://kit.fontawesome.com/e0796720d0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="../JS/main.js"></script>
+    <script src="../JS/index.js"></script>
+    <link rel="stylesheet" href="../CSS/indexx.css">
     <link rel="stylesheet" href="../CSS/cart-index.css">
     <link rel="stylesheet" href="../CSS/workout.css">
 </head>
@@ -44,7 +45,7 @@
             <span class="divider"><hr/></span>
             <li class="nav-item nav-home">
                 <a
-                        href="cars.html"
+                        href="eating.html"
                 >
                     <i class="bi bi-heart-pulse text-danger"></i>
                     <span class="text mx-3 ms-4">Workout</span>
@@ -53,7 +54,7 @@
             <span class="divider"><hr/></span>
             <li class="nav-item nav-home">
                 <a
-                        href="cars.html"
+                        href="eating.html"
                 >
                     <i class="fa fa-cutlery text-danger"></i>
                     <span class="text mx-3 ms-4">Eating</span>
@@ -62,7 +63,7 @@
             <span class="divider"><hr/></span>
             <li class="nav-item nav-home">
                 <a
-                        href="../AboutUs/index.html"
+                        href="../HTML/about-us.html"
                 >
                     <i class="bi bi-person-hearts text-danger"></i>
                     <span class="text mx-3 ms-4">About Us</span>
@@ -410,7 +411,7 @@
                                         </div>
                                         <div class="num-of-challenge">7x4 challenge</div>
                                         <div class="name">full body </br> workout</div>
-                                        <button class="challenge-btn">start</button>
+                                        <button class="challenge-btn" onclick="window.open('challenge-detail.html')">start</button>
                                     </div>
                                 </div>
                                 <div class="challenge-card purple-pastel-background">
@@ -541,7 +542,7 @@
                                     </div>
                                 </div>
                                 <div class="workout-card orange-pastel-background"
-                                     onclick="window.location = 'workout-detail.html'">
+                                     onclick="window.open('../HTML/list-workout.html')">
                                     <img src="../img/pngaaa.com-629517.png" alt="" class="poster">
                                     <div class="content">
                                         <div class="name">abs </br> stomach</div>
@@ -583,9 +584,13 @@
                             <p>calendar</p>
                             <button>history</button>
                         </div>
+
                         <div class="analysis">
                             <p class="num">0</p>
                             <p>days in this month</p>
+                        </div>
+                        <div class="calendar-detail">
+
                         </div>
                     </div>
                     <div class="weight-tracker">
@@ -661,10 +666,21 @@
                                     <i class="fa-solid fa-up-long"></i>
                                 </div>
                                 <div class="compare-with-actual-weight bad-text">
-                                    <i class="fa-solid fa-down-long hide"></i>
+                                    <i class="fa-solid fa-down-long"></i>
                                 </div>
                                 <p>45kg
-                                    <button>edit</button>
+                                    <button onclick="editDreamWeightData()">edit</button>
+                                </p>
+                            </div>
+                            <div class="dream-weight-data-edit hide">
+                                <div class="compare-with-actual-weight bad-text">
+                                    <i class="fa-solid fa-up-long"></i>
+                                </div>
+                                <div class="compare-with-actual-weight bad-text hide">
+                                    <i class="fa-solid fa-down-long"></i>
+                                </div>
+                                <p><input type="text">kg
+                                    <button onclick="saveDreamWeightData()">save</button>
                                 </p>
                             </div>
                         </div>
@@ -677,37 +693,10 @@
                                 save
                             </button>
                         </div>
-                        <ul class="chosen-list">
-                            <li class="target-card">abs</li>
-                            <li class="target-card">leg</li>
-                            <li class="target-card">thigh</li>
-                            <li class="target-card">arm</li>
+                        <ul class="chosen-list" id="my-workout-list">
                             <li class="target-card">face</li>
-                            <li class="target-card">butt</li>
                         </ul>
-                        <ul class="body-part-list hide">
-                            <li class="target-card chosen pink-pastel-background" onclick="chooseThisTag('#abs-tag')"
-                                id="abs-tag">abs
-                            </li>
-                            <li class="target-card" onclick="chooseThisTag('#lower-abs-tag')" id="lower-abs-tag">lower
-                                abs
-                            </li>
-                            <li class="target-card chosen pink-pastel-background" onclick="chooseThisTag('#butt-tag')"
-                                id="butt-tag">butt
-                            </li>
-                            <li class="target-card" onclick="chooseThisTag('#waist-tag')" id="waist-tag">waist</li>
-                            <li class="target-card chosen pink-pastel-background" onclick="chooseThisTag('#arm-tag')"
-                                id="arm-tag">arm
-                            </li>
-                            <li class="target-card" onclick="chooseThisTag('#shoulder-tag')" id="shoulder-tag">
-                                shoulder
-                            </li>
-                            <li class="target-card chosen pink-pastel-background" onclick="chooseThisTag('#thigh-tag')"
-                                id="thigh-tag">thigh
-                            </li>
-                            <li class="target-card chosen pink-pastel-background" onclick="chooseThisTag('#leg-tag')"
-                                id="leg-tag">leg
-                            </li>
+                        <ul class="body-part-list hide" id="chosenList">
                             <li class="target-card" onclick="chooseThisTag('#full-body-tag')" id="full-body-tag">full
                                 body
                             </li>
@@ -735,7 +724,7 @@
                             <div class="daily-workout-time">
                                 <p>per day:</p>
                                 <div class="num">
-                                    <div>15</div>
+                                    <div id="my-workout-time">15</div>
                                     minutes
                                 </div>
                             </div>
@@ -809,5 +798,6 @@
 <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 <script src="../JS/workout.js"></script>
 <script src="../JS/workout-charts.js"></script>
+<script src="../JS/workout-api.js"></script>
 </body>
 </html>
